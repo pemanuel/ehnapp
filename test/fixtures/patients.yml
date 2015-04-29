@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lastname: MyString
+  middlename: MyString
+  firstname: MyString
+  birthdate: 2015-03-05
+  sex: MyString
+  ethnicity: MyString
+  uniqueid: MyString
+  accountnumber: MyString
+  medicaidid: MyString
+  medicareid: MyString
+  ssn: MyString
+
+two:
+  lastname: MyString
+  middlename: MyString
+  firstname: MyString
+  birthdate: 2015-03-05
+  sex: MyString
+  ethnicity: MyString
+  uniqueid: MyString
+  accountnumber: MyString
+  medicaidid: MyString
+  medicareid: MyString
+  ssn: MyString

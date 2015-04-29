@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patients</h1>
+
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Lastname</th>
+          <th>Firstname</th>
+          <th>Birthdate</th>
+          <th>Sex</th>
+          <th>Uniqueid</th>
+          <th>Worklist</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr>
+            <td><%= patient.lastname %></td>
+            <td><%= patient.firstname %></td>
+            <td><%= patient.birthdate %></td>
+            <td><%= patient.sex %></td>
+            <td><%= patient.uniqueid %></td>
+            <td><%= patient.worklist.name %></td>
+            <td><%= link_to 'Show', patient, class: 'btn btn-s btn-primary' %></td> 
+            <td><%= link_to 'Edit', edit_patient_path(patient), class: 'btn btn-s btn-success' %></td> 
+            <td><%= link_to 'Destroy', patient, method: :delete, class: 'btn btn-s btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Create 1 Referral', "/patients/#{patient.id}/referrals/new/normal", class: 'btn btn-s btn-primary' %></td>
+            <td><%= link_to 'Create 2 Referral', "/patients/#{patient.id}/referrals/new/2", class: 'btn btn-s btn-primary' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<div class="col-md-6 col-md-offset-0 panel panel-default "> 
+<h3>Import Patients</h3>
+  <div class="panel=body">
+<%= form_tag import_patients_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Patients", class: 'btn btn-s btn-success' %>
+<% end %>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= link_to 'New Patient', new_patient_path, class: 'btn btn-s btn-primary' %>

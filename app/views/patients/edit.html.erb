@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <body>  
+    <br>
+    <div class="col-md-6 col-md-offset-3 panel panel-default ">
+      <h1>Editing Patient</h1>
+        <div class="panel=body">
+        <%= form_for(@patient) do |f| %>
+            <% if @patient.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+                <ul>
+                <% @patient.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>  
+
+          <%= form_group_for f, :lastname do %>
+            <%= f.text_field :lastname, class: 'form-control' %>
+           <% end %>
+          <%= form_group_for f, :middlename do %>
+            <%= f.text_field :middlename, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :firstname do %>
+            <%= f.text_field :firstname, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :birthdate do %>
+            <%= f.date_field :birthdate, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :sex do %>
+            <%= f.text_field :sex, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :ethnicity do %>
+            <%= f.text_field :ethnicity, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :uniqueid do %>
+            <%= f.number_field :uniqueid, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :accountnumber do %>
+            <%= f.number_field :accountnumber, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :medicaidid do %>
+            <%= f.text_field :medicaidid, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :medicareid do %>
+            <%= f.text_field :medicareid, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :ssn do %>
+            <%= f.number_field :ssn, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :worklist_id do %>
+          <%= f.collection_select :worklist_id, @worklists, :id , :name %>
+          <% end %>
+          <%= f.submit class: 'btn btn-s btn-primary' %> |
+            <%= link_to 'Back', patients_path, class: 'btn btn-s btn-danger' %> |
+            <%= link_to 'Show', @patient, class: 'btn btn-s btn-success' %>
+          <% end %>
+        </div>
+    </div>
+      
+

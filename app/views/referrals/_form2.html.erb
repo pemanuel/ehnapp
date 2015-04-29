@@ -1,0 +1,172 @@
+<%= form_for(@referral) do |f| %>
+  <% if @referral.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@referral.errors.count, "error") %> prohibited this referral from being saved:</h2>
+
+      <ul>
+      <% @referral.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="hiddenfield">
+    <%= f.hidden_field :formtype, value: "#{params[:formtype]}" %>
+  </div>
+  <div class="field">
+    <%= f.label :vistDate %><br>
+    <%= f.date_select :vistDate %>
+  </div>
+  <div class="field">
+    <%= f.label :startTime %><br>
+    <%= f.time_select :startTime %>
+  </div>
+  <div class="field">
+    <%= f.label :endTime %><br>
+    <%= f.time_select :endTime %>
+  </div>
+  <div class="field">
+    <%= f.label :visitType %><br>
+    <%= f.text_field :visitType %>
+  </div>
+  <div class="field">
+    <%= f.label :patientLastName %><br>
+    <%= f.text_field :patientLastName, value: patient.lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :patientFirstName %><br>
+    <%= f.text_field :patientFirstName, value: patient.firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :patientMiddleName %><br>
+    <%= f.text_field :patientMiddleName, value: patient.middlename %>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br>
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br>
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br>
+    <%= f.number_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :homePhone %><br>
+    <%= f.number_field :homePhone %>
+  </div>
+  <div class="field">
+    <%= f.label :mobilePhone %><br>
+    <%= f.number_field :mobilePhone %>
+  </div>
+  <div class="field">
+    <%= f.label :workPhone %><br>
+    <%= f.number_field :workPhone %>
+  </div>
+  <div class="field">
+    <%= f.label :patientSSN %><br>
+    <%= f.number_field :patientSSN %>
+  </div>
+  <div class="field">
+    <%= f.label :patientDOB %><br>
+    <%= f.date_select :patientDOB %>
+  </div>
+  <div class="field">
+    <%= f.label :patientAge %><br>
+    <%= f.number_field :patientAge %>
+  </div>
+  <div class="field">
+    <%= f.label :patientRace %><br>
+    <%= f.text_field :patientRace %>
+  </div>
+  <div class="field">
+    <%= f.label :patientEthnicity %><br>
+    <%= f.text_field :patientEthnicity %>
+  </div>
+  <div class="field">
+    <%= f.label :sexMale %><br>
+    <%= f.check_box :sexMale %>
+  </div>
+  <div class="field">
+    <%= f.label :sexFemale %><br>
+    <%= f.check_box :sexFemale %>
+  </div>
+  <div class="field">
+    <%= f.label :referralDate %><br>
+    <%= f.date_select :referralDate %>
+  </div>
+  <div class="field">
+    <%= f.label :emergencyContactName %><br>
+    <%= f.text_field :emergencyContactName %>
+  </div>
+  <div class="field">
+    <%= f.label :emergencyContactRelationship %><br>
+    <%= f.text_field :emergencyContactRelationship %>
+  </div>
+  <div class="field">
+    <%= f.label :emergencyContactPhone %><br>
+    <%= f.number_field :emergencyContactPhone %>
+  </div>
+  <div class="field">
+    <%= f.label :referringOrgAgency %><br>
+    <%= f.text_field :referringOrgAgency %>
+  </div>
+  <div class="field">
+    <%= f.label :referringCHW %><br>
+    <%= f.number_field :referringCHW %>
+  </div>
+  <div class="field">
+    <%= f.label :primaryDiag %><br>
+    <%= f.text_area :primaryDiag %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :goals %><br>
+    <%= f.text_area :goals %>
+  </div>
+  <div class="field">
+    <%= f.label :reasonForCHWReferral %><br>
+    <%= f.text_area :reasonForCHWReferral %>
+  </div>
+  <div class="field">
+    <%= f.label :takingMeds %><br>
+    <%= f.check_box :takingMeds %>
+  </div>
+  <div class="field">
+    <%= f.label :takingMedsValue %><br>
+    <%= f.text_field :takingMedsValue %>
+  </div>
+  <div class="field">
+    <%= f.label :otherMedicalConcerns %><br>
+    <%= f.check_box :otherMedicalConcerns %>
+  </div>
+  <div class="field">
+    <%= f.label :ifYes %><br>
+    <%= f.text_area :ifYes %>
+  </div>
+  <div class="field">
+    <%= f.label :chwAssigned %><br>
+    <%= f.number_field :chwAssigned %>
+  </div>
+  <div class="field">
+    <%= f.label :nextVistDate %><br>
+    <%= f.date_select :nextVistDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Referral Queue</h1>
+
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Vist Date</th>
+          <th>Visit Type</th>
+          <th>Patient Lastname</th>
+          <th>Patient Firstname</th>
+          <th>Patient Middlename</th>
+          <th>Patient DOB</th>
+          <th>Referral Date</th>
+          <th>CHW Assigned</th>
+          <th colspan="3"></th>
+        </tr>
+     </thead>
+
+  <tbody>
+    <% @referrals.each do |referral| %>
+      <tr>
+        <td><%= referral.vistDate %></td>
+        <td><%= referral.visitType %></td>
+        <td><%= referral.patientLastName %></td>
+        <td><%= referral.patientFirstName %></td>
+        <td><%= referral.patientMiddleName %></td>
+        <td><%= referral.patientDOB %></td>
+        <td><%= referral.referralDate %></td>
+        <td><%= referral.chwAssigned %></td>
+        <td><%= link_to 'Show', referral, class: 'btn btn-s btn-primary' %> </td> 
+        <td><%= link_to 'Edit', edit_referral_path(referral), class: 'btn btn-s btn-success' %> </td> 
+        <td><%= link_to 'Destroy', referral, method: :delete, class: 'btn btn-s btn-danger', data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+<br>
+
+

@@ -1,0 +1,83 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vistDate: 2015-03-29
+  startTime: 2015-03-29 03:45:31
+  endTime: 2015-03-29 03:45:31
+  visitType: MyString
+  patientLastName: MyString
+  patientFirstName: MyString
+  patientMiddleName: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  homePhone: 1
+  mobilePhone: 1
+  workPhone: 1
+  patientSSN: 1
+  patientDOB: 2015-03-29
+  patientAge: 1
+  patientRace: MyString
+  patientEthnicity: MyString
+  sexMale: false
+  sexFemale: false
+  referralDate: 2015-03-29
+  emergencyContactName: MyString
+  emergencyContactRelationship: MyString
+  emergencyContactPhone: 1
+  referringProvider: MyString
+  referringOrgAgency: MyString
+  referringCHW: 1
+  primaryDiag: MyText
+  notes: MyText
+  goals: MyText
+  reasonForCHWReferral: MyText
+  takingMeds: false
+  takingMedsValue: MyString
+  otherMedicalConcerns: false
+  ifYes: MyText
+  chwAssigned: 1
+  nextVistDate: 2015-03-29
+
+two:
+  vistDate: 2015-03-29
+  startTime: 2015-03-29 03:45:31
+  endTime: 2015-03-29 03:45:31
+  visitType: MyString
+  patientLastName: MyString
+  patientFirstName: MyString
+  patientMiddleName: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  homePhone: 1
+  mobilePhone: 1
+  workPhone: 1
+  patientSSN: 1
+  patientDOB: 2015-03-29
+  patientAge: 1
+  patientRace: MyString
+  patientEthnicity: MyString
+  sexMale: false
+  sexFemale: false
+  referralDate: 2015-03-29
+  emergencyContactName: MyString
+  emergencyContactRelationship: MyString
+  emergencyContactPhone: 1
+  referringProvider: MyString
+  referringOrgAgency: MyString
+  referringCHW: 1
+  primaryDiag: MyText
+  notes: MyText
+  goals: MyText
+  reasonForCHWReferral: MyText
+  takingMeds: false
+  takingMedsValue: MyString
+  otherMedicalConcerns: false
+  ifYes: MyText
+  chwAssigned: 1
+  nextVistDate: 2015-03-29

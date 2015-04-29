@@ -1,0 +1,29 @@
+<%= form_for(@worklist) do |f| %>
+  <% if @worklist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@worklist.errors.count, "error") %> prohibited this worklist from being saved:</h2>
+
+      <ul>
+      <% @worklist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :nextworklist %><br>
+    <%= f.text_field :nextworklist %>
+  </div>
+  <div class="field">
+    <%= f.label :status, ('Is the Worklist Active?') %><br>
+    <%= f.check_box :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>

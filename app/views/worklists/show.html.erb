@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @worklist.name %>
+</p>
+
+<p>
+  <strong>Nextworklist:</strong>
+  <%= @worklist.nextworklist %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @worklist.status %>
+</p>
+
+<%= link_to 'Edit', edit_worklist_path(@worklist) %> |
+<%= link_to 'Back', worklists_path %>

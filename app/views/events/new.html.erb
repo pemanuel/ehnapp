@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <body>  
+    <br>
+    <div class="col-md-6 col-md-offset-3 panel panel-default ">
+      <h1>New Calendar Event</h1>
+        <div class="panel=body">
+        <%= form_for(@event) do |f| %>
+            <% if @event.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+                <ul>
+                <% @event.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+              <%= form_group_for f, :title do %>
+              <%= f.text_field :title, class: 'form-control' %>
+              <% end %>
+              <%= form_group_for f, :description do %>
+              <%= f.text_area :description, class: 'form-control' %>
+              <% end %>
+              <%= form_group_for f, :start_time do %>
+              <%= f.datetime_select :start_time, class: 'form-control' %>
+              <% end %>
+              <%= form_group_for f, :end_time do %>
+              <%= f.datetime_select :end_time, class: 'form-control' %>
+              <% end %>
+              <%= f.submit class: 'btn btn-s btn-primary' %> |
+              <%= link_to 'Back', events_path, class: 'btn btn-s btn-danger' %>
+              <% end %>
+         </div>
+    </div>
+</body>
+</html
+
+
+

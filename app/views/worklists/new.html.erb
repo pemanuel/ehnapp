@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>  
+    <br>
+    <div class="col-md-6 col-md-offset-3 panel panel-default ">
+     <h1>New Worklist</h1>
+      <div class="panel=body">
+        <%= form_for(@worklist) do |f| %>
+          <% if @worklist.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@worklist.errors.count, "error") %> prohibited this worklist from being saved:</h2>
+
+              <ul>
+              <% @worklist.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <%= form_group_for f, :name do %>
+            <%= f.text_field :name, class: 'form-control' %>
+           <% end %>
+          <%= form_group_for f, :nextworklist do %>
+            <%= f.text_field :nextworklist, class: 'form-control' %>
+          <% end %>
+          <%= form_group_for f, :status do %>
+            <%= f.label :status, ('Is the Worklist Active?') %><br>
+            <%= f.check_box :status, class: 'form-control' %>
+          <% end %>
+          <%= f.submit class: 'btn btn-s btn-primary' %> |
+          <%= link_to 'Back', worklists_path, class: 'btn btn-s btn-danger' %>
+          <% end %>
+      </div>
+    </div>
+  </body>
+</html>
+
+
