@@ -1,5 +1,6 @@
 class ReferralsController < ApplicationController
   before_action :set_referral, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /referrals
   # GET /referrals.json
@@ -14,8 +15,9 @@ class ReferralsController < ApplicationController
 
   # GET /referrals/new
   def new
-    @patient = Patient.find(params[:id]) if params[:id]
     @referral = Referral.new
+    @patient = Patient.find(params[:patient_id]) if params[:patient_id]
+    @chws = User.where(chw: true)
   end
 
   # GET /referrals/1/edit
@@ -70,6 +72,8 @@ class ReferralsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def referral_params
-      params.require(:referral).permit(:formtype, :vistDate, :startTime, :endTime, :visitType, :patientLastName, :patientFirstName, :patientMiddleName, :address1, :address2, :city, :state, :zip, :homePhone, :mobilePhone, :workPhone, :patientSSN, :patientDOB, :patientAge, :patientRace, :patientEthnicity, :sexMale, :sexFemale, :referralDate, :emergencyContactName, :emergencyContactRelationship, :emergencyContactPhone, :referringProvider, :referringOrgAgency, :referringCHW, :primaryDiag, :notes, :goals, :reasonForCHWReferral, :takingMeds, :takingMedsValue, :otherMedicalConcerns, :ifYes, :chwAssigned, :nextVistDate)
+      params.require(:referral).permit(:formtype, :patient_id, :vistDate, :startTime, :endTime, :visitType, 
+        :referralDate, :referringProvider, :referringOrgAgency, :referringCHW, :primaryDiag, :notes, :goals, 
+        :reasonForCHWReferral, :takingMeds, :takingMedsValue, :otherMedicalConcerns, :ifYes, :chwAssigned, :nextVistDate)
     end
 end

@@ -29,8 +29,7 @@
             <td><%= link_to 'Show', patient, class: 'btn btn-s btn-primary' %></td> 
             <td><%= link_to 'Edit', edit_patient_path(patient), class: 'btn btn-s btn-success' %></td> 
             <td><%= link_to 'Destroy', patient, method: :delete, class: 'btn btn-s btn-danger', data: { confirm: 'Are you sure?' } %></td>
-            <td><%= link_to 'Create 1 Referral', "/patients/#{patient.id}/referrals/new/normal", class: 'btn btn-s btn-primary' %></td>
-            <td><%= link_to 'Create 2 Referral', "/patients/#{patient.id}/referrals/new/2", class: 'btn btn-s btn-primary' %></td>
+            <td><%= link_to 'Create Referral', new_patient_referral_path(patient), class: 'btn btn-s btn-primary' %></td>
           </tr>
         <% end %>
       </tbody>

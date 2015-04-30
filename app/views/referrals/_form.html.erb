@@ -11,163 +11,91 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :vistDate %><br>
-    <%= f.date_select :vistDate %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :formtype, 'Select a Referral Type' %><br>
+        <%= f.select :formtype, options_for_select([["Select One", ""], ["Medical", 1], ["Domestic Violence", 2]]), {}, { class: 'form-control referral-type col-md-2' } %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :startTime %><br>
-    <%= f.time_select :startTime %>
+
+  <div class="form-group">
+    <%= f.label :vistDate, "Visit Date" %><br>
+    <%= f.date_select :vistDate, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :endTime %><br>
-    <%= f.time_select :endTime %>
+  <div class="form-group">
+    <%= f.label :startTime, "Start Time" %><br>
+    <%= f.time_select :startTime, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :visitType %><br>
-    <%= f.text_field :visitType %>
+  <div class="form-group">
+    <%= f.label :endTime, "End Time" %><br>
+    <%= f.time_select :endTime, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :patientLastName %><br>
-    <%= f.text_field :patientLastName, value: patient.lastname %>
+  <div class="form-group">
+    <%= f.label :visitType, "Visit Type" %><br>
+    <%= f.text_field :visitType, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :patientFirstName %><br>
-    <%= f.text_field :patientFirstName, value: patient.firstname %>
+  
+  
+  <div class="form-group">
+    <%= f.label :referralDate, "Referral Date" %><br>
+    <%= f.date_select :referralDate, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :patientMiddleName %><br>
-    <%= f.text_field :patientMiddleName, value: patient.middlename %>
+  
+  <div class="form-group">
+    <%= f.label :referringProvider, "Referring Provider" %><br>
+    <%= f.text_field :referringProvider, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :address1 %><br>
-    <%= f.text_field :address1 %>
+  <div class="form-group">
+    <%= f.label :referringOrgAgency, "Referring Agency" %><br>
+    <%= f.text_field :referringOrgAgency, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :address2 %><br>
-    <%= f.text_field :address2 %>
+  <div class="form-group">
+    <%= f.label :referringCHW, "Referring CHW" %><br>
+    <%= f.number_field :referringCHW, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+  <div class="form-group">
+    <%= f.label :primaryDiag, "Primary Diagnosis" %><br>
+    <%= f.text_area :primaryDiag, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.number_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :homePhone %><br>
-    <%= f.number_field :homePhone %>
-  </div>
-  <div class="field">
-    <%= f.label :mobilePhone %><br>
-    <%= f.number_field :mobilePhone %>
-  </div>
-  <div class="field">
-    <%= f.label :workPhone %><br>
-    <%= f.number_field :workPhone %>
-  </div>
-  <div class="field">
-    <%= f.label :patientSSN %><br>
-    <%= f.number_field :patientSSN %>
-  </div>
-  <div class="field">
-    <%= f.label :patientDOB %><br>
-    <%= f.date_select :patientDOB %>
-  </div>
-  <div class="field">
-    <%= f.label :patientAge %><br>
-    <%= f.number_field :patientAge %>
-  </div>
-  <div class="field">
-    <%= f.label :patientRace %><br>
-    <%= f.text_field :patientRace %>
-  </div>
-  <div class="field">
-    <%= f.label :patientEthnicity %><br>
-    <%= f.text_field :patientEthnicity %>
-  </div>
-  <div class="field">
-    <%= f.label :sexMale %><br>
-    <%= f.check_box :sexMale %>
-  </div>
-  <div class="field">
-    <%= f.label :sexFemale %><br>
-    <%= f.check_box :sexFemale %>
-  </div>
-  <div class="field">
-    <%= f.label :referralDate %><br>
-    <%= f.date_select :referralDate %>
-  </div>
-  <div class="field">
-    <%= f.label :emergencyContactName %><br>
-    <%= f.text_field :emergencyContactName %>
-  </div>
-  <div class="field">
-    <%= f.label :emergencyContactRelationship %><br>
-    <%= f.text_field :emergencyContactRelationship %>
-  </div>
-  <div class="field">
-    <%= f.label :emergencyContactPhone %><br>
-    <%= f.number_field :emergencyContactPhone %>
-  </div>
-  <div class="field">
-    <%= f.label :referringProvider %><br>
-    <%= f.text_field :referringProvider %>
-  </div>
-  <div class="field">
-    <%= f.label :referringOrgAgency %><br>
-    <%= f.text_field :referringOrgAgency %>
-  </div>
-  <div class="field">
-    <%= f.label :referringCHW %><br>
-    <%= f.number_field :referringCHW %>
-  </div>
-  <div class="field">
-    <%= f.label :primaryDiag %><br>
-    <%= f.text_area :primaryDiag %>
-  </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
+    <%= f.text_area :notes, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :goals %><br>
-    <%= f.text_area :goals %>
+    <%= f.text_area :goals, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :reasonForCHWReferral %><br>
-    <%= f.text_area :reasonForCHWReferral %>
+  <div class="form-group">
+    <%= f.label :reasonForCHWReferral, "Reason for CHW Referral" %><br>
+    <%= f.text_area :reasonForCHWReferral, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :takingMeds %><br>
-    <%= f.check_box :takingMeds %>
+  <div class="form-group medical">
+    <%= f.label :takingMeds, "Taking Meds?" %><br>
+    <%= f.check_box :takingMeds, class: 'form-control'%>
   </div>
-  <div class="field">
-    <%= f.label :takingMedsValue %><br>
-    <%= f.text_field :takingMedsValue %>
+  <div class="form-group medical">
+    <%= f.label :takingMedsValue, "Which Meds?" %><br>
+    <%= f.text_field :takingMedsValue, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :otherMedicalConcerns %><br>
-    <%= f.check_box :otherMedicalConcerns %>
+  <div class="form-group medical">
+    <%= f.label :otherMedicalConcerns, "Other Medical Concerns" %><br>
+    <%= f.check_box :otherMedicalConcerns, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :ifYes %><br>
-    <%= f.text_area :ifYes %>
+  <div class="form-group medical">
+    <%= f.label :ifYes, "If Yes, please list them" %><br>
+    <%= f.text_area :ifYes, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :chwAssigned %><br>
-    <%= f.number_field :chwAssigned %>
+  <div class="form-group">
+    <%= f.label :chwAssigned, "CHW Assigned" %><br>
+    <%= f.number_field :chwAssigned, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :nextVistDate %><br>
-    <%= f.date_select :nextVistDate %>
+  <div class="form-group">
+    <%= f.label :nextVistDate, "Next Visit Date" %><br>
+    <%= f.date_select :nextVistDate, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,11 +1,5 @@
 
-<h1>New Referral</h1>
-
-<%- if referral.formtype == "normal" %>
-  <%= render 'referral_normal' %>
-<%- elsif referral.formtype == "2" %>
-  <%= render 'referral_2' %>
-<%- end %>
+<h1>Referral for <small><%= @referral.patient.full_name %></small></h1>
 
 <%= link_to 'Back', referrals_path %>
 
@@ -33,113 +27,8 @@
 </p>
 
 <p>
-  <strong>Patientlastname:</strong>
-  <%= @referral.patientLastName %>
-</p>
-
-<p>
-  <strong>Patientfirstname:</strong>
-  <%= @referral.patientFirstName %>
-</p>
-
-<p>
-  <strong>Patientmiddlename:</strong>
-  <%= @referral.patientMiddleName %>
-</p>
-
-<p>
-  <strong>Address1:</strong>
-  <%= @referral.address1 %>
-</p>
-
-<p>
-  <strong>Address2:</strong>
-  <%= @referral.address2 %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @referral.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @referral.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @referral.zip %>
-</p>
-
-<p>
-  <strong>Homephone:</strong>
-  <%= @referral.homePhone %>
-</p>
-
-<p>
-  <strong>Mobilephone:</strong>
-  <%= @referral.mobilePhone %>
-</p>
-
-<p>
-  <strong>Workphone:</strong>
-  <%= @referral.workPhone %>
-</p>
-
-<p>
-  <strong>Patientssn:</strong>
-  <%= @referral.patientSSN %>
-</p>
-
-<p>
-  <strong>Patientdob:</strong>
-  <%= @referral.patientDOB %>
-</p>
-
-<p>
-  <strong>Patientage:</strong>
-  <%= @referral.patientAge %>
-</p>
-
-<p>
-  <strong>Patientrace:</strong>
-  <%= @referral.patientRace %>
-</p>
-
-<p>
-  <strong>Patientethnicity:</strong>
-  <%= @referral.patientEthnicity %>
-</p>
-
-<p>
-  <strong>Sexmale:</strong>
-  <%= @referral.sexMale %>
-</p>
-
-<p>
-  <strong>Sexfemale:</strong>
-  <%= @referral.sexFemale %>
-</p>
-
-<p>
   <strong>Referraldate:</strong>
   <%= @referral.referralDate %>
-</p>
-
-<p>
-  <strong>Emergencycontactname:</strong>
-  <%= @referral.emergencyContactName %>
-</p>
-
-<p>
-  <strong>Emergencycontactrelationship:</strong>
-  <%= @referral.emergencyContactRelationship %>
-</p>
-
-<p>
-  <strong>Emergencycontactphone:</strong>
-  <%= @referral.emergencyContactPhone %>
 </p>
 
 <p>

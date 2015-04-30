@@ -15,11 +15,9 @@ Rails.application.routes.draw do
   get 'welcome/help'
 
   resources :patients do
-      collection { post :import }
-    member do
-      get 'referrals/new/:formtype', to: 'referrals#new', as: "new_refferal"
-    end
-    #resources :referrals, only: [:new]
+    collection { post :import }
+  
+    resources :referrals, only: [:new]
   end
   
   resources :referrals do
