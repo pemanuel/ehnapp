@@ -32,7 +32,7 @@ class ReferralsController < ApplicationController
     @referral = @patient.referrals.build(referral_params)
 
     respond_to do |format|
-      if @referral.save!
+      if @referral.save
         format.html { redirect_to @referral, notice: 'Referral was successfully created.' }
         format.json { render :show, status: :created, location: @referral }
       else

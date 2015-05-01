@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-sm-3">
         <%= f.label :formtype, 'Select a Referral Type' %><br>
-        <%= f.select :formtype, options_for_select([["Select One", ""], ["Medical", 1], ["Domestic Violence", 2]]), {}, { class: 'form-control referral-type col-md-2' } %>
+        <%= f.select :formtype, [["Select One", ""], ["Medical", 1], ["Domestic Violence", 2]], {}, { class: 'form-control referral-type col-md-2' } %>
       </div>
     </div>
   </div>
