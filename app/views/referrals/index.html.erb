@@ -27,7 +27,13 @@
         <td><%= referral.patient.firstname %></td>
         <td><%= referral.patient.birthdate %></td>
         <td><%= referral.referralDate %></td>
-        <td><%= referral.assigned_chw.name %></td>
+        <td>
+          <% if referral.assigned_chw.present? %>
+            <%= referral.assigned_chw.name  %>
+          <% else %>
+            <em>Not assigned</em>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', referral, class: 'btn btn-s btn-primary' %> </td> 
         <td><%= link_to 'Edit', edit_referral_path(referral), class: 'btn btn-s btn-success' %> </td> 
         <td><%= link_to 'Destroy', referral, method: :delete, class: 'btn btn-s btn-danger', data: { confirm: 'Are you sure?' } %></td>
