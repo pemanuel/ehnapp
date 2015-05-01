@@ -8,4 +8,7 @@ $(function(){
 			$fields.hide().find('input, select').prop('disabled', true);;
 		}
 	});
+	$('body').on('click', '.js-change-chw-link', function(){
+		$('#js-change-chw').slideDown('fast');
+	});
 });

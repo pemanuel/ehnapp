@@ -19,3 +19,5 @@
 //= require chosen-jquery
 //= require fullcalendar
 //= require_tree .
+
+function nothing(){}

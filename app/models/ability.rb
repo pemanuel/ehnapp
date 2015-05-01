@@ -5,14 +5,17 @@ class Ability
     user ||= User.new # guest user (not logged in)
     
     if user.admin?
+        can :manage, :all        
+    end
+
+    if user.manager?
         can :manage, :all
     end
 
     if user.chw?
-      can :read, Referral, :user_id => user.id
-    else
-      
+        can :manage, :all
     end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

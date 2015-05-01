@@ -95,15 +95,6 @@
   </div>
   
   <div class="form-group">
-    <div class="row">
-      <div class="col-sm-3">
-        <%= f.label :chwAssigned, "CHW Assigned" %><br>
-        <%= f.collection_select :chwAssigned, @chws, :id, :name, { prompt: 'Select one' }, { class: 'form-control' } %>
-      </div>
-    </div>
-  </div>
-  
-  <div class="form-group">
     <%= f.label :nextVistDate, "Next Visit Date" %><br>
     <%= f.date_select :nextVistDate, class: 'form-control' %>
   </div>

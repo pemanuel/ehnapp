@@ -1,10 +1,29 @@
 
 <h1>Referral for <small><%= @referral.patient.full_name %></small></h1>
 
-<%= link_to 'Back', referrals_path %>
-
-
 <p id="notice"><%= notice %></p>
+
+<div class="well">
+  <h4>Assigned CHW</h4>
+  <% if @referral.assigned_chw.present? %>
+    <%= @referral.assigned_chw.name %>
+  <% end %>
+  <% if current_user.admin? || current_user.manager? %>
+    <span><a class="js-change-chw-link" href="javascript:nothing()">[change]</a>
+    <div id="js-change-chw" class="change-chw">
+      <%= form_for [@referral.patient, @referral], html: { class: 'form-inline' } do |f| %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-3">
+                <%= f.collection_select :chwAssigned, @chws, :id, :name, { prompt: 'Select one' }, { class: 'form-control' } %>
+              </div>
+            </div>
+          </div>
+          <%= f.submit 'Assign', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <p>
   <strong>Vistdate:</strong>
@@ -43,7 +62,7 @@
 
 <p>
   <strong>Referringchw:</strong>
-  <%= @referral.referringCHW %>
+  <%= @referral.referring_chw.name %>
 </p>
 
 <p>
@@ -84,11 +103,6 @@
 <p>
   <strong>Ifyes:</strong>
   <%= @referral.ifYes %>
-</p>
-
-<p>
-  <strong>Chwassigned:</strong>
-  <%= @referral.chwAssigned %>
 </p>
 
 <p>

@@ -11,6 +11,7 @@ class ReferralsController < ApplicationController
   # GET /referrals/1
   # GET /referrals/1.json
   def show
+    @chws = User.where(chw: true)
   end
 
   # GET /patients/1/referrals/new

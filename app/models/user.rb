@@ -6,11 +6,19 @@ class User < ActiveRecord::Base
   
   acts_as_messageable
 
-  has_many :outgoing_referrals, foreign_key: :chwAssigned
-  has_many :incoming_referrals, foreign_key: :referringCHW
+  has_many :outgoing_referrals, foreign_key: :chwAssigned, inverse_of: :assigned_chw
+  has_many :incoming_referrals, foreign_key: :referringCHW, inverse_of: :referring_chw
 
   def admin?
     self.admin
+  end
+
+  def manager?
+    self.manager
+  end
+
+  def chw?
+    self.chw
   end
   
 	def mailboxer_email(object)
