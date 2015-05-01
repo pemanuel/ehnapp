@@ -13,7 +13,7 @@ class ReferralsController < ApplicationController
   def show
   end
 
-  # GET /referrals/new
+  # GET /patients/1/referrals/new
   def new
     @referral = Referral.new
     @patient = Patient.find(params[:patient_id]) if params[:patient_id]
@@ -22,15 +22,17 @@ class ReferralsController < ApplicationController
 
   # GET /referrals/1/edit
   def edit
+    @chws = User.where(chw: true)
   end
 
   # POST /referrals
   # POST /referrals.json
   def create
-    @referral = Referral.new(referral_params)
+    @patient  = Patient.find(params[:patient_id])
+    @referral = @patient.referrals.build(referral_params)
 
     respond_to do |format|
-      if @referral.save
+      if @referral.save!
         format.html { redirect_to @referral, notice: 'Referral was successfully created.' }
         format.json { render :show, status: :created, location: @referral }
       else

@@ -1,4 +1,4 @@
-<%= form_for(@referral) do |f| %>
+<%= form_for [@patient, @referral] do |f| %>
   <% if @referral.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@referral.errors.count, "error") %> prohibited this referral from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <%= f.label :formtype, 'Select a Referral Type' %><br>
         <%= f.select :formtype, options_for_select([["Select One", ""], ["Medical", 1], ["Domestic Violence", 2]]), {}, { class: 'form-control referral-type col-md-2' } %>
       </div>
@@ -51,10 +51,16 @@
     <%= f.label :referringOrgAgency, "Referring Agency" %><br>
     <%= f.text_field :referringOrgAgency, class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :referringCHW, "Referring CHW" %><br>
-    <%= f.number_field :referringCHW, class: 'form-control' %>
+
+   <div class="form-group">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= f.label :referringCHW, "Referring CHW" %><br>
+        <%= f.collection_select :referringCHW, @chws, :id, :name, { prompt: 'Select one' }, { class: 'form-control' } %>
+      </div>
+    </div>
   </div>
+
   <div class="form-group">
     <%= f.label :primaryDiag, "Primary Diagnosis" %><br>
     <%= f.text_area :primaryDiag, class: 'form-control' %>
@@ -87,10 +93,16 @@
     <%= f.label :ifYes, "If Yes, please list them" %><br>
     <%= f.text_area :ifYes, class: 'form-control' %>
   </div>
+  
   <div class="form-group">
-    <%= f.label :chwAssigned, "CHW Assigned" %><br>
-    <%= f.number_field :chwAssigned, class: 'form-control' %>
+    <div class="row">
+      <div class="col-sm-3">
+        <%= f.label :chwAssigned, "CHW Assigned" %><br>
+        <%= f.collection_select :chwAssigned, @chws, :id, :name, { prompt: 'Select one' }, { class: 'form-control' } %>
+      </div>
+    </div>
   </div>
+  
   <div class="form-group">
     <%= f.label :nextVistDate, "Next Visit Date" %><br>
     <%= f.date_select :nextVistDate, class: 'form-control' %>

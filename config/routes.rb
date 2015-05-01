@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :patients do
     collection { post :import }
   
-    resources :referrals, only: [:new]
+    resources :referrals
   end
   
   resources :referrals do
