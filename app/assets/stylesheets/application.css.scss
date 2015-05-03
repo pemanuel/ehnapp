@@ -18,14 +18,12 @@
 body { background-color: black }
 header { 
 	padding: 5px 0 15px 0;
-	.logo { display: inline-block; width: 100px }
-	img { width: 100px }
-	.nav-tabs { 
-		border: 0;
-		a { color: white }
-		a:hover, a:focus { background: none; border-color: black; text-decoration: underline }
-	}
 }
+header .logo { display: inline-block; width: 100px }
+header img { width: 100px }
+header .nav-tabs { border: 0 }
+header .nav-tabs a { color: white }
+header .nav-tabs a:hover, a:focus { background: none; border-color: black; text-decoration: underline }
 .content { background-color: white }
 footer { color: white; padding: 50px 0 }
 
