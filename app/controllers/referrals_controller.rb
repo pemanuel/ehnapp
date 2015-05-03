@@ -5,7 +5,11 @@ class ReferralsController < ApplicationController
   # GET /referrals
   # GET /referrals.json
   def index
-    @referrals = Referral.all
+    if current_user.chw?
+      @referrals = Referral.where(chwAssigned: current_user.id)
+    else
+      @referrals = Referral.all
+    end
   end
 
   # GET /referrals/1
